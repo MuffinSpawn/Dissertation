@@ -1,0 +1,42 @@
+<?xml version='1.0' standalone='yes' ?>
+<LVData xmlns="http://www.ni.com/LVData">
+<Version>13.0f2</Version>
+<Object>
+<Name>Shifter in</Name>
+<NumLevels>1</NumLevels>
+<Class>Shifter.lvclass</Class>
+<Version>1.0.0.1</Version>
+<Cluster>
+<Name>Shifter.lvclass</Name>
+<NumElts>3</NumElts>
+<String>
+<Name>name</Name>
+<Val>Peter Lane</Val>
+</String>
+<Array>
+<Name>emails</Name>
+<Dimsize>2</Dimsize>
+<String>
+<Name>email</Name>
+<Val>plane@fnal.gov</Val>
+</String>
+<String>
+<Name>email</Name>
+<Val>plane1@hawk.iit.edu</Val>
+</String>
+</Array>
+<Array>
+<Name>phoneNumbers</Name>
+<Dimsize>2</Dimsize>
+<String>
+<Name>email</Name>
+<Val>773-988-4905</Val>
+</String>
+<String>
+<Name>email</Name>
+<Val>847-671-0380</Val>
+</String>
+</Array>
+</Cluster>
+</Object>
+</LVData>

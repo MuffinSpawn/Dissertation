@@ -1,0 +1,67 @@
+HPRF Cavity, 50 atm N2, 99.5% Alumina Ring w/ teflon holders
+
+; Copyright 1998, by the University of California. 
+; Unauthorized commercial use is prohibited. 
+
+&reg kprob=1,            ; Superfish problem
+icylin=1,                ; cylindrical symmetry
+dx=0.05,                 ; X mesh spacing
+dy=0.05,                 ; Y mesh spacing
+freq=805,                ; Starting frequency in MHz
+xdri=0.0,ydri=5.97 &     ; Drive point location
+
+&po x=0.0, y=11.4184 &
+&po x=0.0, y=0.0 &
+&po x=8.100, y=0.0 &
+&po x=8.100, y=11.4184 &
+&po x=8.000, y=11.4184 &
+&po x=0.1, y=11.4184 &
+&po x=0.0, y=11.4184 &
+
+&reg mat=2 &
+&po x=0.0, y=11.4184 &
+&po x=0.0, y=0.0 &
+&po x=8.100, y=0.0 &
+&po x=8.100, y=11.4184 &
+&po x=0.0, y=11.4184 &
+
+&reg mat=4 &
+&po x=0.0, y=11.271 &
+&po x=0.0, y=10.438 &
+&po x=3.096, y=10.438 &
+&po x=3.096, y=11.271 &
+&po x=0.0, y=11.271 &
+
+&reg mat=3 &
+&po x=3.096, y=11.311 &
+&po x=3.096, y=8.990 &
+&po nt=4, radius=1.0, x=2.303, y=8.176 &
+&po x=2.303, y=4.683 &
+&po nt=4, radius=1.0, x=3.096, y=3.864 &
+&po x=5.004, y=3.864 &
+&po nt=4, radius=1.0, x=5.797, y=4.683 &
+&po x=5.797, y=8.176 &
+&po nt=4, radius=1.0, x=5.004, y=8.990 &
+&po x=5.004, y=11.311 &
+&po x=3.096, y=11.311 &
+
+&reg mat=4 &
+&po x=5.004, y=11.271 &
+&po x=5.004, y=10.438 &
+&po x=8.100, y=10.438 &
+&po x=8.100, y=11.271 &
+&po x=5.004, y=11.271 &
+
+
+&mt mtid=2   
+epsilon=1.02761, 0.0  ; permittivity of N2 at 50 atm
+mu=1.0, 0.0 &
+
+&mt mtid=3
+epsilon=9.57, 0.00274 ; real and imaginary (real * loss tangent) part of the relative permittivity of alumina
+mu=1.0, 0.0 &
+
+&mt mtid=4
+epsilon=2.1, 0.000588 ; real and imaginary (real * loss tangent) part of the relative permittivity of teflon 
+mu=1.0, 0.0 &
+

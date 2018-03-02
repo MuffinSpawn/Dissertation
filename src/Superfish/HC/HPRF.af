@@ -1,0 +1,20 @@
+805 MHz TM010 High-Pressure Pillbox Cavity with Buttons
+In this problem, Kmax > Lmax
+
+&reg kprob=1,           ; Superfish problem
+dx=.2,                  ; X mesh spacing
+freq=805.,              ; Starting frequency in MHz
+xdri=-4.05,ydri=6.35 &      ; Drive point location
+
+&po x=0.0,y=0.0 &       ; start of the boundary points
+&po x=-0.889,y=0.0 &		; upstream button tip
+						; 	4.064 cm (center flange 1/2 height) - 0.635 cm (shim) - 2.54 cm (button radius)
+&po nt=2, r=2.54, theta=90.0,x0=-3.429,y0=0.0  & ; button curve (x0 = 4.064 cm - 0.635 cm)
+&po x=-4.064,y=2.54 &	; base of upstream button
+&po x=-4.064,y=11.43 &	; upstream end flange/center flange interface
+&po x=4.064,y=11.43 &	; downstream end flange/center flange interface
+&po x=4.064,y=2.54 &		; base of downstream button
+&po x=3.429,y=2.54 &		; start of downstream button curve
+&po nt=2, r=2.54, theta=180.0,x0=3.429,y0=0.0  &	; downstream button tip
+&po x=0.0,y=0.0 &		; back to start
+

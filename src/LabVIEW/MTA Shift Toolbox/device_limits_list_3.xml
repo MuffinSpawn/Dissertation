@@ -1,0 +1,44 @@
+<?xml version='1.0' standalone='yes' ?>
+<LVData xmlns="http://www.ni.com/LVData">
+<Version>13.0f2</Version>
+<Object>
+<Name>ACNET Device Limits List in</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device Limits List.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device Limits List.lvclass</Name>
+<NumElts>1</NumElts>
+<Array>
+<Name>Device Limits List</Name>
+<Dimsize>1</Dimsize>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device Limits.lvclass</Class>
+<Version>1.0.0.2</Version>
+<Cluster>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:FATTY</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>1000.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Fat bastard!</Val>
+</String>
+</Cluster>
+</Object>
+</Array>
+</Cluster>
+</Object>
+</LVData>

@@ -1,0 +1,22 @@
+201 MHz TM010 MICE Cavity
+In this problem, Kmax > Lmax
+
+&reg kprob=1,           ; Superfish problem
+dx=.2,                  ; X mesh spacing
+freq=201.,              ; Starting frequency in MHz
+xdri=0.0,ydri=60. &      ; Drive point location
+
+&po x=0.0,y=0.0 &       ; Start of the boundary points
+&po x=-20.0, y=0.0 &
+&po x=-20.0, y=27.3 &
+&po x=-18.5, y=27.3 &
+&po x=-17.75, y=48.3 &
+&po nt=2, r=11.8, a=10.9, b=11.8, theta=90.0, x0=-6.85, y0=48.3  &
+&po x=0.0, y=60.1 &
+&po x=6.85, y=60.1 &
+&po nt=2, r=10.9, a=10.9, b=11.8, theta=0.0, x0=6.85, y0=48.3  &
+&po x=18.5, y=27.3 &
+&po x=20.0, y=27.3 &
+&po x=20.0, y=0.0 &
+&po x=0.0,y=0.0 &
+

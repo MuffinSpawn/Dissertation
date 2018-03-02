@@ -1,0 +1,30 @@
+; This file contains start-up settings for WSFplot
+MainWindowXPosition=   95
+MainWindowYPosition=    0
+MainWindowWidth= 1043
+MainWindowHeight=  743
+EditWindowXPosition= 1236
+EditWindowYPosition=  150
+HardcopyFileExtension=.PNG
+NumberOfContours=   30
+ContourLineWidth=1
+AxisLineWidth=1
+ArrowLineWidth=1
+CircleLineWidth=1
+BoundaryLineWidth=1
+MeshLineWidth=1
+GridSpacing=  0.30000000    
+TitleStatus=0
+AxisStatus=0
+TriangleStatus=1
+ContourStatus=0
+ArrowStatus=0
+CircleStatus=0
+FooterStatus=0
+XYSwapStatus=0
+OriginStatus=0
+LastProblemFile=C:\USERS\PLANE\DOCUMENTS\SUPERFISH\HPRF\HPRF.AF
+ZoomLimits  1    -4.0838242       11.966665     -0.17318182E-01   11.447317       0.0000000    
+ZoomLimits  2    -4.1286945       10.919953     -0.99161886E-01   11.529339       0.0000000    
+ZoomLevel=1
+MaxZoomLevel=2

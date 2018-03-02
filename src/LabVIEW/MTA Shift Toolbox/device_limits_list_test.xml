@@ -1,0 +1,78 @@
+<?xml version='1.0' standalone='yes' ?>
+<LVData xmlns="http://www.ni.com/LVData">
+<Version>13.0f2</Version>
+<Object>
+<Name>ACNET Devices in</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Devices.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Devices.lvclass</Name>
+<NumElts>1</NumElts>
+<Array>
+<Name>Devices</Name>
+<Dimsize>2</Dimsize>
+<Object>
+<Name>ACNET Device.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.1</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>5</NumElts>
+<String>
+<Name>name</Name>
+<Val>D:OUTTMP</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>2.00000000000000</Val>
+</DBL>
+<String>
+<Name>units</Name>
+<Val>F</Val>
+</String>
+<String>
+<Name>description</Name>
+<Val>Outside temperature</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.1</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>5</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:201VAC</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>1.00000000000000E-8</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>1.00000000000000E-6</Val>
+</DBL>
+<String>
+<Name>units</Name>
+<Val>Torr</Val>
+</String>
+<String>
+<Name>description</Name>
+<Val>Cavity top vacuum</Val>
+</String>
+</Cluster>
+</Object>
+</Array>
+</Cluster>
+</Object>
+</LVData>

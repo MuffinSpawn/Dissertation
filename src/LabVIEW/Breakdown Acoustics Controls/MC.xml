@@ -1,0 +1,20 @@
+<Configuration>
+  <DAQChannels>
+    cDAQ9188-18A4729Mod4/ai2:5, cDAQ9188-18A4729Mod2/ai2:5, cDAQ9188-18A4729Mod1/ai6:7
+  </DAQChannels>
+  <MicrophoneLocations>
+    <MicrophoneLocation r="7.81" theta="0.8761" z="-6.5" />
+	<MicrophoneLocation r="7.81" theta="2.2655" z="-6.5" />
+	<MicrophoneLocation r="7.81" theta="-2.2655" z="-6.5" />
+	<MicrophoneLocation r="7.81" theta="-0.8761" z="-6.5" />
+	<MicrophoneLocation r="7.81" theta="0.8761" z="-6.5" />
+	<MicrophoneLocation r="7.81" theta="2.2655" z="-6.5" />
+	<MicrophoneLocation r="7.81" theta="-2.2655" z="6.5" />
+	<MicrophoneLocation r="7.81" theta="0.8761" z="6.5" />
+	<MicrophoneLocation r="16.22" theta="1.4472" z="-25.0" />
+	<MicrophoneLocation r="16.10" theta="1.5708" z="-14.0" />
+  </MicrophoneLocations>
+  <DataDirectory>
+    \\beams-utility\mta_archive$\mtarflv3\Microphone DAQ\Data\MC
+  </DataDirectory>
+</Configuration>

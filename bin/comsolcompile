@@ -1,0 +1,6 @@
+#!/bin/bash
+
+jardir="/c/progra~1/COMSOL/COMSOL44/plugins"
+
+#/c/Program\ Files/Java/jdk1.8.0_31/bin/javac.exe -classpath "/c/Program\ Files/COMSOL/COMSOL44/plugins/*" $@
+/c/Program\ Files/Java/jdk1.6.0_45/bin/javac.exe -cp $(echo $jardir/*.jar | tr ' ' ':') $@

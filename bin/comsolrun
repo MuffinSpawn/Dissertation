@@ -1,0 +1,3 @@
+#!/bin/bash
+
+/c/Program\ Files/COMSOL/COMSOL44/bin/win64/comsolbatch.exe -mpmode owner -inputfile $@ ; start wmplayer "C:\\Users\\plane\\Dropbox\\Research\\MTA\\DAQ VIs\\MTA Shift Toolbox\\tng_torpedo_clean.mp3"

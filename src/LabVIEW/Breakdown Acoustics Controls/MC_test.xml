@@ -1,0 +1,20 @@
+<Configuration>
+  <DAQChannels>
+    cDAQ9188-18A4729Mod1/ai0:1, cDAQ9188-18A4729Mod2/ai0:1, cDAQ9188-18A4729Mod3/ai0:1, cDAQ9188-18A4729Mod4/ai0:1
+  </DAQChannels>
+  <MicrophoneLocations>
+    <MicrophoneLocation r="7.81" theta="0.8761" z="-6.5" />
+	<MicrophoneLocation r="7.81" theta="2.2655" z="-6.5" />
+	<MicrophoneLocation r="7.81" theta="-2.2655" z="-6.5" />
+	<MicrophoneLocation r="7.81" theta="-0.8761" z="-6.5" />
+	<MicrophoneLocation r="7.81" theta="0.8761" z="-6.5" />
+	<MicrophoneLocation r="7.81" theta="2.2655" z="-6.5" />
+	<MicrophoneLocation r="7.81" theta="-2.2655" z="6.5" />
+	<MicrophoneLocation r="7.81" theta="0.8761" z="6.5" />
+	<MicrophoneLocation r="16.22" theta="1.4472" z="-25.0" />
+	<MicrophoneLocation r="16.10" theta="1.5708" z="-14.0" />
+  </MicrophoneLocations>
+  <DataDirectory>
+    C:\Users\plane\Desktop\Data\MC\Testing
+  </DataDirectory>
+</Configuration>

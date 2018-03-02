@@ -1,0 +1,1734 @@
+<?xml version='1.0' standalone='yes' ?>
+<LVData xmlns="http://www.ni.com/LVData">
+<Version>13.0f2</Version>
+<Object>
+<Name>ACNET Devices in</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Devices.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Devices.lvclass</Name>
+<NumElts>1</NumElts>
+<Array>
+<Name>Devices</Name>
+<Dimsize>66</Dimsize>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>D:OUTTMP</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>100.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Outside temperature</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:201VAC</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>1.00000000000000E-8</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>1.00000000000000E-6</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Cavity top vacuum</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2ACH4</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>20.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>35.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Coax gas pressure</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2AMPL</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Signal generator drive level</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2APR1</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>60.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>90.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Tuner actuator input pressure</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2APR2</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>-1.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>20.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Tuner actuator push pressure</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2APR3</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>-1.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>20.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Tuner actuator pull pressure</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2CBIG</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>1.00000000000000E-8</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>1.00000000000000E-6</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Cavity bot vacuum</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2CLIG</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Left coupler vacuum IG</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2CLPR</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>1.00000000000000E-7</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>1.00000000000000E-6</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Left coupler vacuum CCG</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2CRIG</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Right coupler vacuum IG</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2CRPR</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>1.00000000000000E-7</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>1.00000000000000E-6</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Right coupler vacuum CCG</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2DTC</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>-4.50000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>0.50000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Cavity temperature differential</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2FL01</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>0.80000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>1.20000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Coupler water flow</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2FL02</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>1.00000000000000E-2</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Window water flow</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2FL03</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>0.80000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>1.20000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Cavity body water flow</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2FREQ</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>1.22000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>1.25000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Cavity frequency - 200 MHz</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2FRG1</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>1.00000000000000E-8</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>1.00000000000000E-6</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Vessel vacuum FRG</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2FRG2</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>1.00000000000000E-9</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>1.00000000000000E-6</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Getter manifold vacuum IG</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2PHAS</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>-0.20000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>0.20000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Cavity phase</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2PROB</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>1.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>1.65000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Cavity pickup envelope peak</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2TC</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>18.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>25.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Cavity avg temperature</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2TC01</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>18.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>23.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Cavity us tc 1</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2TC02</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>18.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>23.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Cavity us tc 2</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2TC03</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>18.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>23.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Cavity us tc 3</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2TC04</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>18.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>23.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Cavity us tc 4</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2TC05</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>18.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>23.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Cavity us tc 5</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2TC06</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>18.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>23.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Cavity us tc 6</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2TC07</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>17.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>28.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Vessel us flange plate tc</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2TC08</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>17.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>28.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Vessel center ring tc</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2TC09</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>18.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>27.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Cavity ds tc 1</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2TC10</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>18.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>27.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Cavity ds tc 2</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2TC11</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>18.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>27.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Cavity ds tc 3</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2TC12</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>18.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>27.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Cavity ds tc 4</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2TC13</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>18.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>27.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Cavity ds tc 5</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2TC14</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>18.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>27.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Cavity ds tc 6</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2TC15</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>17.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>28.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Vessel ds flange plate tc</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2TC16</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>17.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>28.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Hall temperature west wall thermocouple</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2TCDS</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>18.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>26.50000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Cavity downstream face temperature</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2TCUS</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>18.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>22.50000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Cavity upstream face temperature</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2VPR2</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>-1.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>20.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Tuner actuator push pressure</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2VPR3</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>-1.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>20.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Tuner actuator pull pressure</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C2WMIG</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>1.00000000000000E-8</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>1.00000000000000E-7</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Wall manifold vacuum IG</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:MCCWIN</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>45.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>110.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Chiller output supply pressure</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:MCCWOU</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>110.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Chiller input return pressure</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:MTAMR1</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>10.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>IC1 dose rate 60s</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:MTAMR2</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>40.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>IC2 dose rate 60s</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:MTAMR3</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>24.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>IC3 dose rate 60s</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:MTAMR4</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>12.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>IC4 dose rate 60s</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:SOLIG2</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>1.00000000000000E-8</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>1.00000000000000E-6</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Vessel vacuum IG</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>G:RD2043</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>10.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Chipmunk dose rate 60s</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>L:DR7F</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>100.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Driver fwd power</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>L:DR7R</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>10.50000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Driver ref power</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>L:DR7SV</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>400.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Driver screen voltage</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>L:IPA17F</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>100.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>IPA1 fwd power</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>L:IPA17R</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>72.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>IPA1 ref power</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>L:IPA27F</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>2.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>IPA2 fwd power</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>L:IPA27R</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>0.12500000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>IPA2 ref power</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>L:LGHUM</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>20.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>80.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Linac Gallery humidity</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>L:LGTEMP</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>65.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>85.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Linac Gallery temperature</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>L:MD7OI</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Modulator output current</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>L:MD7OV</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Modulator output voltage</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>L:PA7ION</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>0.10000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>7835 filament IP current</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>L:RF7HV</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>33.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>42.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>Modulator HV</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>L:RF7PAI</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>6499.99999999999999</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>7349.99999999999999</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>7835 filament current</Val>
+</String>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device Limits.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Device.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>4</NumElts>
+<String>
+<Name>name</Name>
+<Val>L:RF7PAV</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<String>
+<Name>description</Name>
+<Val>7835 filament voltage</Val>
+</String>
+</Cluster>
+</Object>
+</Array>
+</Cluster>
+</Object>
+</LVData>

@@ -1,0 +1,170 @@
+<?xml version='1.0' standalone='yes' ?>
+<LVData xmlns="http://www.ni.com/LVData">
+<Version>13.0f2</Version>
+<Object>
+<Name>ACNET Devices in</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Monitor.lvlib:ACNET Devices.lvclass</Class>
+<Version>1.0.0.0</Version>
+<Cluster>
+<Name>ACNET Devices.lvclass</Name>
+<NumElts>1</NumElts>
+<Array>
+<Name>Devices</Name>
+<Dimsize>4</Dimsize>
+<Object>
+<Name>ACNET Device.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Monitor.lvlib:ACNET Device.lvclass</Class>
+<Version>1.0.0.1</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>7</NumElts>
+<String>
+<Name>name</Name>
+<Val>D:OUTTMP</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>100.00000000000000</Val>
+</DBL>
+<String>
+<Name>units</Name>
+<Val>F</Val>
+</String>
+<String>
+<Name>description</Name>
+<Val>Outside temperature</Val>
+</String>
+<Boolean>
+<Name>ignoreMinValue</Name>
+<Val>1</Val>
+</Boolean>
+<Boolean>
+<Name>ignoreMaxValue</Name>
+<Val>1</Val>
+</Boolean>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Monitor.lvlib:ACNET Device.lvclass</Class>
+<Version>1.0.0.1</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>7</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C8GLP2</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>-5.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>20.00000000000000</Val>
+</DBL>
+<String>
+<Name>units</Name>
+<Val>PSI</Val>
+</String>
+<String>
+<Name>description</Name>
+<Val>Cavity gas pressure</Val>
+</String>
+<Boolean>
+<Name>ignoreMinValue</Name>
+<Val>0</Val>
+</Boolean>
+<Boolean>
+<Name>ignoreMaxValue</Name>
+<Val>0</Val>
+</Boolean>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Monitor.lvlib:ACNET Device.lvclass</Class>
+<Version>1.0.0.1</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>7</NumElts>
+<String>
+<Name>name</Name>
+<Val>E:C8SPRK</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>40.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>140.00000000000000</Val>
+</DBL>
+<String>
+<Name>units</Name>
+<Val>CNT</Val>
+</String>
+<String>
+<Name>description</Name>
+<Val>805MHz Spark Count</Val>
+</String>
+<Boolean>
+<Name>ignoreMinValue</Name>
+<Val>0</Val>
+</Boolean>
+<Boolean>
+<Name>ignoreMaxValue</Name>
+<Val>0</Val>
+</Boolean>
+</Cluster>
+</Object>
+<Object>
+<Name>ACNET Device.lvclass</Name>
+<NumLevels>1</NumLevels>
+<Class>ACNET Monitor.lvlib:ACNET Device.lvclass</Class>
+<Version>1.0.0.1</Version>
+<Cluster>
+<Name>ACNET Device.lvclass</Name>
+<NumElts>7</NumElts>
+<String>
+<Name>name</Name>
+<Val>L:M8PFNV</Val>
+</String>
+<DBL>
+<Name>minValue</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>maxValue</Name>
+<Val>20.00000000000000</Val>
+</DBL>
+<String>
+<Name>units</Name>
+<Val>KV</Val>
+</String>
+<String>
+<Name>description</Name>
+<Val>PFN voltage</Val>
+</String>
+<Boolean>
+<Name>ignoreMinValue</Name>
+<Val>0</Val>
+</Boolean>
+<Boolean>
+<Name>ignoreMaxValue</Name>
+<Val>0</Val>
+</Boolean>
+</Cluster>
+</Object>
+</Array>
+</Cluster>
+</Object>
+</LVData>
