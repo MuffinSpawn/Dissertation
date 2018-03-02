@@ -1,7 +1,7 @@
 ##################################################################
 #                             NOTE
 # To run this script, change all instances of
-# 'C:\\msys64\\home\\plane\\Development\\Dissertation\\' to the location of
+# 'C:\\Users\\peter\\Development\\Dissertation\\' to the location of
 # this Bazaar branch's root directory.
 ##################################################################
 
@@ -9,9 +9,11 @@
 
 # In[3]:
 
+'''
 get_ipython().magic(u'load_ext autoreload')
 get_ipython().magic(u'autoreload 2')
 get_ipython().magic(u'matplotlib inline')
+'''
 import math
 import os
 import os.path as path
@@ -23,8 +25,10 @@ import matplotlib.cm as cm
 import matplotlib.collections as mcollections
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt  # Matplotlib's pyplot: MATLAB-like syntax
+
+sys.path.insert(0, "C:\\Users\\peter\\Dropbox\\Library\\Python")
 import scipy.signal as sig
-import pgl.signal as signal
+import pgl.signal as psig
 import pgl.labview as labview
 import pgl.comsol as comsol
 import pgl.tektronix as tektronix
@@ -74,11 +78,12 @@ plt.xlabel('Cable Length (cm)')
 plt.ylabel('Average Peak Voltage (V)')
 plt.errorbar(cable_lengths, avg_peak_v_list, yerr=stddev_list, marker='.')
 
-errors = np.array(map(lambda vpp,stddev: 2.0 / (vpp*vpp)*stddev, avg_peak_v_list, stddev_list))
+errors = np.array(list(map(lambda vpp,stddev: 2.0 / (vpp*vpp)*stddev, avg_peak_v_list, stddev_list)))
+print(errors)
 (a, b) = curve.fit_polynomial(cable_lengths, 1.0/avg_peak_v_list, order=1, yerr=errors)
 fit_xs = range(60, 900, 10)
-fit_ys = np.array(map(lambda x: a + b*x, fit_xs))
-print ''.join((str(a), ' + ', str(b), '*x'))
+fit_ys = np.array(list(map(lambda x: a + b*x, fit_xs)))
+print(''.join((str(a), ' + ', str(b), '*x')))
 plt.plot(fit_xs, 1.0/fit_ys)
 
 plt.subplot(122)
@@ -91,21 +96,21 @@ frequency = 133e3
 c_m = 1.83e-9  # F
 loss_factor = 0.02
 mic_impedence = 1.0 / (2*math.pi*frequency*c_m*loss_factor)
-print ''.join(('Mic Impedence: ', str(mic_impedence)))
+print(''.join(('Mic Impedence: ', str(mic_impedence))))
 
 cc_per_cm = 46.4e-12  # F
 cable_length_domain = np.arange(59, 883)
 cable_impedences = map(lambda l: 1.0 / (2*math.pi*frequency*cc_per_cm*l), cable_length_domain)
-voltage_drop_factors = np.array(map(lambda z: z/(mic_impedence + z), cable_impedences))
+voltage_drop_factors = np.array(list(map(lambda z: z/(mic_impedence + z), cable_impedences)))
 base_voltage = avg_peak_v_list[0] / voltage_drop_factors[0]
-print ''.join(('Base Voltage: ', str(base_voltage)))
+print(''.join(('Base Voltage: ', str(base_voltage))))
 
 cp = 2.43e-12  # F
 kq = 400.0e-10  # cm/V
 max_disp = kq * base_voltage
-print ''.join(('Max. Displacement: ', str(max_disp)))
+print(''.join(('Max. Displacement: ', str(max_disp))))
 
-plt.show()
+# plt.show()
 
 
 # ## Disk Comparison
@@ -126,7 +131,7 @@ def plot_all(tek_dir, tek_file, comsol_dir, comsol_file, sign):
 
     dt = xs[1] - xs[0]
     df = 1.0 / dt / len(xs)
-    print "".join(("dt: ", str(dt), " s\tdf: ", str(df), " Hz"))
+    print("".join(("dt: ", str(dt), " s\tdf: ", str(df), " Hz")))
     frequency_spectrum = np.fft.fft(ys)      [:round(ys.size/2)]
     spectrum_magnitudes = np.sqrt(np.real(frequency_spectrum)**2 + np.imag(frequency_spectrum)**2)
     frequencies = np.fft.fftfreq(
@@ -140,8 +145,8 @@ def plot_all(tek_dir, tek_file, comsol_dir, comsol_file, sign):
     plt.plot(frequencies, spectrum_magnitudes / np.max(spectrum_magnitudes))
 
     (xs, ys) = comsol.load_csv_data(comsol_dir, comsol_file)
-    print np.shape(xs)
-    print np.shape(ys)
+    print(np.shape(xs))
+    print(np.shape(ys))
     xs = xs[0]
     ys = ys[0] / np.max(ys[0])
     plt.subplot(223)
@@ -153,7 +158,7 @@ def plot_all(tek_dir, tek_file, comsol_dir, comsol_file, sign):
 
     dt = xs[1] - xs[0]
     df = 1.0 / dt / len(xs)
-    print "".join(("dt: ", str(dt), " s\tdf: ", str(df), " Hz"))
+    print("".join(("dt: ", str(dt), " s\tdf: ", str(df), " Hz")))
     frequency_spectrum = np.fft.fft(ys)      [:round(ys.size/2)]
     spectrum_magnitudes = np.sqrt(np.real(frequency_spectrum)**2 + np.imag(frequency_spectrum)**2)
     frequencies = np.fft.fftfreq(
@@ -166,12 +171,12 @@ def plot_all(tek_dir, tek_file, comsol_dir, comsol_file, sign):
     plt.ylim((0,1))
     plt.plot(frequencies, spectrum_magnitudes / np.max(spectrum_magnitudes))
 
-tek_dir = "C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\AMC\\"
+tek_dir = "C:\\Users\\peter\\Development\\Dissertation\\data\\AMC\\"
 tek_file = "F0011CH3.CSV"
-comsol_dir = "C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\AMC\\"
+comsol_dir = "C:\\Users\\peter\\Development\\Dissertation\\data\\AMC\\"
 comsol_file = "Dist_24cm_beta_dM_1e-6.csv"
 plot_all(tek_dir, tek_file, comsol_dir, comsol_file, -1)
-plt.show()
+# plt.show()
 
 
 # ## Disk Under Ring Comparison
@@ -192,7 +197,7 @@ def plot_all(tek_dir, tek_file, comsol_dir, comsol_file, sign):
 
     dt = xs[1] - xs[0]
     df = 1.0 / dt / len(xs)
-    print "".join(("dt: ", str(dt), " s\tdf: ", str(df), " Hz"))
+    print("".join(("dt: ", str(dt), " s\tdf: ", str(df), " Hz")))
     frequency_spectrum = np.fft.fft(ys)      [:round(ys.size/2)]
     spectrum_magnitudes = np.sqrt(np.real(frequency_spectrum)**2 + np.imag(frequency_spectrum)**2)
     frequencies = np.fft.fftfreq(
@@ -206,8 +211,8 @@ def plot_all(tek_dir, tek_file, comsol_dir, comsol_file, sign):
     plt.plot(frequencies, spectrum_magnitudes / np.max(spectrum_magnitudes))
 
     (xs, ys) = comsol.load_csv_data(comsol_dir, comsol_file)
-    print np.shape(xs)
-    print np.shape(ys)
+    print(np.shape(xs))
+    print(np.shape(ys))
     xs = xs[0]
     ys = ys[0] / np.max(ys[0])
     plt.subplot(223)
@@ -219,7 +224,7 @@ def plot_all(tek_dir, tek_file, comsol_dir, comsol_file, sign):
 
     dt = xs[1] - xs[0]
     df = 1.0 / dt / len(xs)
-    print "".join(("dt: ", str(dt), " s\tdf: ", str(df), " Hz"))
+    print("".join(("dt: ", str(dt), " s\tdf: ", str(df), " Hz")))
     frequency_spectrum = np.fft.fft(ys)      [:round(ys.size/2)]
     spectrum_magnitudes = np.sqrt(np.real(frequency_spectrum)**2 + np.imag(frequency_spectrum)**2)
     frequencies = np.fft.fftfreq(
@@ -232,26 +237,26 @@ def plot_all(tek_dir, tek_file, comsol_dir, comsol_file, sign):
     plt.ylim((0,1))
     plt.plot(frequencies, spectrum_magnitudes / np.max(spectrum_magnitudes))
 
-tek_dir = "C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\AMC\\"
+tek_dir = "C:\\Users\\peter\\Development\\Dissertation\\data\\AMC\\"
 tek_file = "F0000CH3.CSV"
-comsol_dir = "C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\AMC\\"
+comsol_dir = "C:\\Users\\peter\\Development\\Dissertation\\data\\AMC\\"
 comsol_file = "ring_under_disk_0.25ms_30.5cm_25ms_1.5e8_1.5e8_1.5e8.csv"
 plot_all(tek_dir, tek_file, comsol_dir, comsol_file, -1)
 
 
 # # High-Pressure Cavity
 
-# ## HPC Observed vs. Simulated RF Hammer Comparison
+# ## HC Observed vs. Simulated RF Hammer Comparison
 
 # In[ ]:
 
 #get_ipython().magic(u'matplotlib qt')
-lv_dir = "C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\HPC\\"
+lv_dir = "C:\\Users\\peter\\Development\\Dissertation\\data\\HC\\"
 if platform.system() == 'Linux':
     lv_dir = "/home/lane/Data/HPRF/HPRF 20120614/sparks_36MV-M_15Hz/"
 lv_file = "spark_66_68.npz"
 (times, real_hammer_signals) = labview.load_data(lv_dir, lv_file, t0=0.029342, t1=0.039342, channels=(0,5,3,))  # channels=(0,5,3,6,))
-(frequencies, magnitudes, phases) = signal.spectra(times, real_hammer_signals)
+(frequencies, magnitudes, phases) = psig.spectra(times, real_hammer_signals)
 fig = plt.figure(figsize=(20.0, 8.0))
 plt.subplot(221)
 #plt.xlabel('Time (s)')
@@ -262,15 +267,15 @@ plt.subplot(222)
 plt.ylabel('Normalized Magnitude')
 plot.plot_signals(frequencies*1e-3, magnitudes, ylim=(0,1.2), tlim=30, norm=True)
 
-comsol_dir = "C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\HPC\\"
+comsol_dir = "C:\\Users\\peter\\Development\\Dissertation\\data\\HC\\"
 if platform.system() == 'Linux':
     comsol_dir = "/home/lane/Data/COMSOL/HPRF/RF Hammer with Thin Elastic Layer/"
 comsol_file = "\S0_TEL_r_1e9_z_21e6_S1_TEL_r_15e6_z_1e9_S5_TEL_r_1e9_z_37e6_10ms.npy"
 (times, sim_hammer_signals_set) = comsol.load_data(comsol_dir, comsol_file, dt=2e-6)
 
 sim_hammer_signals = sim_hammer_signals_set[0]
-(frequencies, magnitudes, phases) = signal.spectra(times, sim_hammer_signals)
-print signal.peaks(frequencies, magnitudes[2])[:10]
+(frequencies, magnitudes, phases) = psig.spectra(times, sim_hammer_signals)
+print(psig.peaks(frequencies, magnitudes[2])[:10])
 plt.subplot(223)
 plt.xlabel(r'Time ($\mu s$)')
 plt.ylabel('Normalized Voltage')
@@ -280,34 +285,34 @@ plt.xlabel(r'Frequency ($kHz$)')
 plt.ylabel('Normalized Magnitude')
 #plot.plot_spectra(times, sim_hammer_signals, flim=3e4, ylim=1.2, norm=True)
 plot.plot_signals(frequencies*1e-3, magnitudes, ylim=(0,1.2), tlim=30, norm=True)
-plt.show()
+# plt.show()
 
 
-# ## HPC RF Hammer Events
+# ## HC RF Hammer Events
 
 # In[ ]:
 
 #get_ipython().magic(u'matplotlib qt')
-lv_dir = "C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\HPC\\"
+lv_dir = "C:\\Users\\peter\\Development\\Dissertation\\data\\HC\\"
 if platform.system() == 'Linux':
     lv_dir = "/home/lane/Data/COMSOL/HPRF/HPRF 20120614/sparks_36MV-M_15Hz/"
 lv_file = "spark_66_68.npz"
 (times, real_hammer_signals) = labview.load_data(lv_dir, lv_file, t0=0.029342, t1=0.039342, channels=(0,5,3,))  # channels=(0,5,3,6,))
-(frequencies, magnitudes, phases) = signal.spectra(times, real_hammer_signals)
+(frequencies, magnitudes, phases) = psig.spectra(times, real_hammer_signals)
 fig = plt.figure(figsize=(20.0, 8.0))
 plt.xlabel(r'Time ($\mu s$)')
 plt.ylabel('Normalized Voltage')
 plot.plot_signals(times*1e6, real_hammer_signals, tlim=150, ylim=1.5, norm=True)
 
-plt.show()
+# plt.show()
 
 
-# ## HPC Breakdown
+# ## HC Breakdown
 
 # In[ ]:
 
 #get_ipython().magic(u'matplotlib qt')
-lv_dir = "C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\HPC\\"
+lv_dir = "C:\\Users\\peter\\Development\\Dissertation\\data\\HC\\"
 if platform.system() == 'Linux':
     lv_dir = "/home/lane/Data/HPRF/HPRF 20120614/sparks_36MV-M_15Hz/"
 # lv_file = "spark_66_68.npz"
@@ -321,7 +326,7 @@ plt.ylabel(r'Amplitude ($V$)')
 plot.plot_signals(times*1e6, real_breakdown_signals, tlim=600, ylim=4.6)
 
 plt.subplot(212)
-comsol_dir = "C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\HPC\\"
+comsol_dir = "C:\\Users\\peter\\Development\\Dissertation\\data\\HC\\"
 if platform.system() == 'Linux':
     comsol_dir = "/home/lane/Data/COMSOL/HPRF/Shockwave/"
 comsol_file = "HprfBreakdown2D_k_z_S0_100e5_k_r_S1_100e5_k_z_S5_100e5_T_270K.npy"
@@ -330,14 +335,14 @@ plt.xlabel(r'Time ($\mu s$)')
 plt.ylabel(r'Pressure ($Pa$)')
 plot.plot_signals(times*1e6, sim_breakdown_signals[0], tlim=600, ylim=0.55)
 
-plt.show()
+# plt.show()
 
 
-# ## HPC Simulated 2D Breakdown
+# ## HC Simulated 2D Breakdown
 
 # In[ ]:
 
-comsol_dir = "C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\HPC\\"
+comsol_dir = "C:\\Users\\peter\\Development\\Dissertation\\data\\HC\\"
 if platform.system() == 'Linux':
     comsol_dir = "/home/lane/Data/COMSOL/HPRF/Shockwave/"
 #comsol_file = "HprfBreakdown2D_k_z_S0_390e5_k_r_S1_0_k_z_S5_480e5_T_250K.npy"
@@ -349,14 +354,14 @@ plt.ylabel(r'Pressure ($Pa$)')
 plt.tight_layout()
 plot.plot_signals(times*1e6, sim_breakdown_signals[0], tlim=600, ylim=0.75)
 
-plt.show()
+# plt.show()
 
 
-# ## HPC Simulated 3D Breakdown
+# ## HC Simulated 3D Breakdown
 
 # In[ ]:
 
-comsol_dir = "C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\HPC\\"
+comsol_dir = "C:\\Users\\peter\\Development\\Dissertation\\data\\HC\\"
 if platform.system() == 'Linux':
     comsol_dir = "/home/lane/Data/COMSOL/HPRF/Shockwave/"
 comsol_file = "HprfBreakdown2D_k_z_S0_390e5_k_r_S1_0_k_z_S5_480e5_T_250K.npy"
@@ -368,7 +373,7 @@ plt.ylabel(r'Pressure ($Pa$)')
 plt.tight_layout()
 plot.plot_signals(times*1e6, sim_breakdown_signals[0], tlim=600, ylim=1.1, norm=True)
 
-plt.show()
+# plt.show()
 
 
 # # MICE Cavity
@@ -379,7 +384,7 @@ plt.show()
 
 #get_ipython().magic(u'matplotlib qt')
 fig = plt.figure(figsize=(20.0, 8.0))
-lv_dir = "C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\MICEC\\"
+lv_dir = "C:\\Users\\peter\\Development\\Dissertation\\data\\MICEC\\"
 if platform.system() == 'Linux':
     lv_dir = "/home/lane/Data/SCM/Runs/20141117/"
 fig.text(0.5, 0.05, r'Time ($\mu s$)', ha='center', va='center', size=18)
@@ -400,7 +405,7 @@ lv_file = "raw_2014-11-18_10-10-20.060@10_10_20.060.npz"
 #plt.xlabel(r'Time ($\mu s$)')
 plot.plot_signals(times*1e6, raw_spark_signals, tlim=600, ylim=5.1)
 
-plt.show()
+# plt.show()
 
 
 # ## Tap Test
@@ -409,7 +414,7 @@ plt.show()
 
 #get_ipython().magic(u'matplotlib qt')
 fig = plt.figure(figsize=(20.0, 8.0))
-lv_dir = "C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\MICEC\\"
+lv_dir = "C:\\Users\\peter\\Development\\Dissertation\\data\\MICEC\\"
 if platform.system() == 'Linux':
     lv_dir = "/home/lane/Data/SCM/Testing/20150108/"
 lv_file = "Data_1448_19_29@14_52_31.057.npz"
@@ -420,7 +425,7 @@ plt.ylabel('Amplitude (V)')
 plt.tight_layout()
 plot.plot_signals(times*1e6, raw_hammer_signals, tlim=100000, ylim=5.1)
 
-plt.show()
+# plt.show()
 
 
 # ## RFI Test
@@ -430,13 +435,13 @@ plt.show()
 #get_ipython().magic(u'matplotlib qt')
 fig = plt.figure(figsize=(20.0, 8.0))
 fig.text(0.5, 0.05, r'Time ($\mu s$)', ha='center', va='center', size=18)
-lv_dir = "C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\MICEC\\"
+lv_dir = "C:\\Users\\peter\\Development\\Dissertation\\data\\MICEC\\"
 if platform.system() == 'Linux':
     lv_dir = "/home/lane/Data/SCM/Runs/2015-03-25/"
 lv_file = "raw_data_2015-03-25@16_09_32.431.npz"
 channels = range(0, 12)
 (times, real_hammer_signals) = labview.load_data(lv_dir, lv_file, channels=channels)
-(frequencies, magnitudes, phases) = signal.spectra(times, real_hammer_signals)
+(frequencies, magnitudes, phases) = psig.spectra(times, real_hammer_signals)
 
 plt.subplot(121)
 plt.ylabel('Amplitude (V)')
@@ -447,14 +452,14 @@ rfi_mic_channel = 8
 plot.plot_signals(times*1e6, [real_hammer_signals[8]], tlim=1500, ylim=5)
 
 plt.tight_layout()
-plt.show()
+# plt.show()
 
 
 # ## Simulated Width vs Radius
 
 # In[ ]:
 
-directory = "C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\MICEC\\"
+directory = "C:\\Users\\peter\\Development\\Dissertation\\data\\MICEC\\"
 if platform.system() == 'Linux':
     directory = "/home/lane/Dropbox/Research/MTA/Analysis/SCM/Frequency vs Distance Study/"
 filename = "line_cut_time_series.npz"
@@ -462,7 +467,7 @@ data = np.load(''.join((directory, filename)))
 keys = ['_'.join(('arr', str(i))) for i in range(len(data.keys()))]
 a_vs_x_at_t = np.array([data[key][1] for key in keys])
 shape = np.shape(a_vs_x_at_t)
-a_vs_t_at_x = np.transpose(a_vs_x_at_t)[np.floor(shape[1]/2):,:np.floor(shape[0]/4)]
+a_vs_t_at_x = np.transpose(a_vs_x_at_t)[int(np.floor(shape[1]/2)):,:int(np.floor(shape[0]/4))]
 dt = 2.e-6
 num_time_steps = np.shape(a_vs_t_at_x)[1]-1
 times = np.linspace(0, num_time_steps*dt, num=num_time_steps+1)*1.e6
@@ -478,7 +483,7 @@ for index,signal in enumerate(a_vs_t_at_x):
 # In[ ]:
 
 #get_ipython().magic(u'matplotlib qt')
-radii = data['arr_0'][0, np.floor(shape[1]/2):]*1e5
+radii = data['arr_0'][0, int(np.floor(shape[1]/2)):]*1e5
 radii -= radii[0]
 fig = plt.figure(figsize=(10.0, 8.0))
 plt.plot(radii, wavefront_widths, 'k')
@@ -486,7 +491,7 @@ plt.xlim((0,radii[-1]))
 plt.ylim((2,6))
 plt.xlabel('Radius (cm)')
 plt.ylabel(r'Width ($\mu s$)')
-plt.show()
+# plt.show()
 
 
 # ## Simulated Window vs Body Wavefront Time
@@ -500,7 +505,7 @@ plot.plot_signals(times, signals, tlim=500, ylim=1.1)
 plt.ylabel('Normalized Amplitude')
 plt.xlabel(r'Time ($\mu s$)')
 plt.tight_layout()
-#plt.show()
+## plt.show()
 
 
 # # Modular Cavity
@@ -510,7 +515,7 @@ plt.tight_layout()
 # In[3]:
 
 #get_ipython().magic(u'matplotlib qt')
-lv_dir = "C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\MC\\"
+lv_dir = "C:\\Users\\peter\\Development\\Dissertation\\data\\MC\\"
 if platform.system() == 'Linux':
     lv_dir = "/home/lane/Data/MC/2015-09-02/"
 lv_file = "rf_hammer.npz"
@@ -526,7 +531,7 @@ plot.plot_signals(times*1e3, passive_hammer_signals, tlim=51.2, ylim=1.2)
 plt.subplot(122)
 plot.plot_signals(times*1e3, active_hammer_signals[(0,2),:], tlim=51.2, ylim=12)
 
-plt.show()
+# plt.show()
 
 
 # ## Breakdown vs. Raw
@@ -534,7 +539,7 @@ plt.show()
 # In[2]:
 
 #get_ipython().magic(u'matplotlib qt')
-lv_dir = "C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\MC\\"
+lv_dir = "C:\\Users\\peter\\Development\\Dissertation\\data\\MC\\"
 if platform.system() == 'Linux':
     lv_dir = "/home/lane/Desktop/Data/MC/2015-12-21/"
 lv_files = ["raw_data_2015-12-21@02_28_40.867.npz", "reduced_data_2015-12-21@11_05_57.532.npz"]
@@ -553,7 +558,7 @@ plt.subplot(122)
 #plot.plot_signals(times*1e3, preamp_breakdown_signals, tlim=12.8, ylim=1.2)
 plot.plot_signals(times*1e3, preamp_breakdown_signals, tlim=(0.04, 0.1), ylim=1.5)
 
-plt.show()
+# plt.show()
 
 
 # ## Six Downstream, Breakdown Signals
@@ -561,7 +566,7 @@ plt.show()
 # In[4]:
 
 #get_ipython().magic(u'matplotlib qt')
-lv_dir = "C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\MC\\"
+lv_dir = "C:\\Users\\peter\\Development\\Dissertation\\data\\MC\\"
 if platform.system() == 'Linux':
     lv_dir = "/home/lane/Desktop/Data/MC/2015-12-21/"
 lv_files = ["reduced_data_2015-12-21@11_05_57.472.npz",
@@ -630,11 +635,11 @@ fig.text(0.5, 0.05, r'x (cm)', ha='center', va='center', size=26)
 
 plt.subplot(121)
 plt.ylabel('y (cm)')
-spark_locations = np.load("C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\MC\\spark_locations.npy")
-actual_locations = np.load("C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\MC\\actual_locations.npy")
+spark_locations = np.load("C:\\Users\\peter\\Development\\Dissertation\\data\\MC\\spark_locations.npy")
+actual_locations = np.load("C:\\Users\\peter\\Development\\Dissertation\\data\\MC\\actual_locations.npy")
 plot_source_locations(spark_locations[:,0], spark_locations[:,1], actual_locations[:,0], actual_locations[:,1])
 plt.subplot(122)
-spark_locations = np.load("C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\MC\\spark_locations_8.npy")
+spark_locations = np.load("C:\\Users\\peter\\Development\\Dissertation\\data\\MC\\spark_locations_8.npy")
 plot_source_locations(spark_locations[:,0], spark_locations[:,1], actual_locations[:,0], actual_locations[:,1])
 
 
@@ -677,7 +682,7 @@ def plot_source_locations(predicted_xs, predicted_ys, actual_xs, actual_ys, erro
 DS_auto_predictions = np.array([[1.7, -2.7], [1.7, -3.0], [2.9, -0.7], [2.9, -0.3], [0.7, -0.3], [2.3, -1.0]])
 DS_manual_predictions = np.array([[1.1, -3.5], [1.1, -3.4], [2.0, -0.1], [2.5, 0.1], [1.4, 0.1], [1.8, -0.8]])
 
-directory = 'C:/Users/plane/Desktop/Data/MC/'
+directory = 'C:/Users/peter/Development/Dissertation/Data/MC/'
 US_coordinate_file = ''.join((directory, 'US_B=3T_coord_in_cm_aligned.npy'))
 DS_coordinate_file = ''.join((directory, 'DS_B=3T_coord_in_cm_aligned.npy'))
 US_coordinates = np.load(US_coordinate_file)
@@ -697,21 +702,21 @@ plot_source_locations(DS_auto_predictions[:,0], DS_auto_predictions[:,1], DS_coo
 
 # In[41]:
 
-print np.shape(DS_coordinates)
+print(np.shape(DS_coordinates))
 damage_centroid = np.average(DS_coordinates, axis=0)
 damage_stddev = math.sqrt(np.sum(np.sum((DS_coordinates-damage_centroid)**2, axis=1)) / len(DS_coordinates))
-print 'Damage Centroid:', damage_centroid
-print 'Damage Centroid Std. Dev.:', damage_stddev
-print 'Damage Centroid Radius (cm):', math.sqrt(np.sum(damage_centroid**2))
-print 'Damage Centroid Angle (deg):', 360 + math.atan2(damage_centroid[1], damage_centroid[0]) * 180 / math.pi
+print('Damage Centroid:', damage_centroid)
+print('Damage Centroid Std. Dev.:', damage_stddev)
+print('Damage Centroid Radius (cm):', math.sqrt(np.sum(damage_centroid**2)))
+print('Damage Centroid Angle (deg):', 360 + math.atan2(damage_centroid[1], damage_centroid[0]) * 180 / math.pi)
 
 prediction_centroid = np.average(DS_auto_predictions, axis=0)
 prediction_stddev = math.sqrt(np.sum(np.sum((DS_auto_predictions-prediction_centroid)**2, axis=1)) / len(DS_auto_predictions))
-print 'Prediction Centroid:', prediction_centroid
-print 'Prediction Centroid Std. Dev.:', prediction_stddev
-print 'Prediction Centroid Radius (cm):', math.sqrt(np.sum(prediction_centroid**2))
-print 'Prediction Centroid Angle (deg):', 360 + math.atan2(prediction_centroid[1], prediction_centroid[0]) * 180 / math.pi
-print 'Centroid Distance:', math.sqrt(np.sum((damage_centroid-prediction_centroid)**2))
+print('Prediction Centroid:', prediction_centroid)
+print('Prediction Centroid Std. Dev.:', prediction_stddev)
+print('Prediction Centroid Radius (cm):', math.sqrt(np.sum(prediction_centroid**2)))
+print('Prediction Centroid Angle (deg):', 360 + math.atan2(prediction_centroid[1], prediction_centroid[0]) * 180 / math.pi)
+print('Centroid Distance:', math.sqrt(np.sum((damage_centroid-prediction_centroid)**2)))
 
 
 # ## End Plate Transmission
@@ -723,21 +728,21 @@ fig.text(0.48, 0.05, 'Time (s)', ha='center', va='center')
 fig.text(0.01, 0.52, 'Acceleration z-component (m/s^2)', ha='center', va='center', rotation='vertical')
 plt.gcf().subplots_adjust(bottom=0.15, left=0.06)
 
-comsol_dir = "C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\HPC\\"
+comsol_dir = "C:\\Users\\peter\\Development\\Dissertation\\data\\HC\\"
 (times, hprf_signals) = comsol.load_data(comsol_dir, "HPRF_end_flange.csv")
 plt.subplot(121)
 plt.xlim([0,0.005])
 plt.ylim([-4,4])
 plt.plot(times, hprf_signals[0], 'k')
 
-comsol_dir = "C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\MC\\"
+comsol_dir = "C:\\Users\\peter\\Development\\Dissertation\\data\\MC\\"
 (times, mc_signals) = comsol.load_data(comsol_dir, "MC_end_plate.csv")
 plt.subplot(122)
 plt.xlim([0,0.005])
 plt.ylim([-4,4])
 plt.plot(times, mc_signals[0], 'k')
 
-plt.show()
+# plt.show()
 
 
 # # Dielectric-Loaded High Pressure Cavity
@@ -759,7 +764,7 @@ fig = plt.figure(figsize=(14.0, 5.8))
 fig.text(0.53, 0.05, r'Time ($\mu s$)', ha='center', va='center', size=24)
 fig.text(0.02, 0.58, 'Normalized Amplitude (V)', ha='center', va='center', rotation='vertical', size=24)
 
-lv_dir = "C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\HPC\\2015-11-12\\Hammer\\"
+lv_dir = "C:\\Users\\peter\\Development\\Dissertation\\data\\HC\\2015-11-12\\Hammer\\"
 if platform.system() == 'Linux':
     lv_dir = "/home/lane/Data/HPRF/2015-11-12/Hammer/"
 lv_files = [ f for f in os.listdir(lv_dir) if (path.isfile(path.join(lv_dir,f)) and f.startswith("raw_data_") and f.endswith(".npz")) ]
@@ -784,7 +789,7 @@ plt.plot(times, avg_hammer_signals_0deg[2]/np.max(avg_hammer_signals_0deg[2]), '
 plt.text(5.0, 0.6, r'Mic #3', size=24)
 plt.text(5.0, -0.9, r'$240^\circ$', size=24)
 
-lv_dir = "C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\HPC\\2015-11-13\\Hammer\\"
+lv_dir = "C:\\Users\\peter\\Development\\Dissertation\\data\\HC\\2015-11-13\\Hammer\\"
 if platform.system() == 'Linux':
     lv_dir = "/home/lane/Data/HPRF/2015-11-13/Hammer/"
 lv_files = [ f for f in os.listdir(lv_dir) if (path.isfile(path.join(lv_dir,f)) and f.startswith("raw_data_") and f.endswith(".npz")) ]
@@ -810,7 +815,7 @@ plt.text(5.0, 0.6, r'Mic #2', size=24)
 plt.text(5.0, -0.9, r'$240^\circ$', size=24)
 
 plt.gcf().subplots_adjust(bottom=0.15, top=0.95, left=0.09, hspace=0.3, wspace=0.25)
-plt.show()
+# plt.show()
 
 
 # ## Microphone Rotation Test Localizations
@@ -891,62 +896,63 @@ thickness = 5.08  # cm
 settling_time = 1.25e-6
 
 # 0 Degrees
-lv_dir = "C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\HPC\\2015-11-12\\Breakdown\\"
+lv_dir = "C:\\Users\\peter\\Development\\Dissertation\\data\\HC\\2015-11-12\\Breakdown\\"
 if platform.system() == 'Linux':
     lv_dir = "/home/lane/Data/HPRF/2015-11-12/Breakdown/"
 lv_files = sorted([ f for f in os.listdir(lv_dir) if (path.isfile(path.join(lv_dir,f)) and f.startswith("reduced_data_") and f.endswith(".npz")) ])
 rs = [11.0, 11.0, 11.0]  # cm
 thetas = np.array([11.5, 19.5, 3.5]) * math.pi / 12.0
-xs = map(lambda r,theta: r * math.cos(theta), rs, thetas)
-ys = map(lambda r,theta: r * math.sin(theta), rs, thetas)
-mic_coordinates = np.array(zip(xs, ys))
+xs = list(map(lambda r,theta: r * math.cos(theta), rs, thetas))
+ys = list(map(lambda r,theta: r * math.sin(theta), rs, thetas))
+mic_coordinates = np.array(list(zip(xs, ys)))
+print(mic_coordinates)
 spark_locations_0 = np.empty((len(lv_files), 2))
 for index,lv_file in enumerate(lv_files):
     (times, breakdown_signals) = labview.load_data(lv_dir, lv_file, channels=[0,1,2])
     dt = times[1] - times[0]
-    spark_location = signal.accumulated_correlation(breakdown_signals[:,5:20], dt, mic_coordinates, radius, thickness, v_p_SS, grid_size=100, settling_time=settling_time)
+    spark_location = psig.accumulated_correlation(breakdown_signals[:,5:20], dt, mic_coordinates, radius, thickness, thetas, grid_size=100, settling_time=settling_time)
     spark_locations_0[index] = spark_location
-    print '.',
+    print('.',)
 print
 
 # 120 Degrees
-lv_dir = "C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\HPC\\2015-11-13\\Breakdown\\"
+lv_dir = "C:\\Users\\peter\\Development\\Dissertation\\data\\HC\\2015-11-13\\Breakdown\\"
 if platform.system() == 'Linux':
     lv_dir = "/home/lane/Data/HPRF/2015-11-13/Breakdown/"
 lv_files = sorted([ f for f in os.listdir(lv_dir) if (path.isfile(path.join(lv_dir,f)) and f.startswith("reduced_data_") and f.endswith(".npz")) ])
 rs = [11.0, 11.0, 11.0]  # cm
 thetas = np.array([19.5, 3.5, 11.5]) * math.pi / 12.0  # 120 degree rotation
-xs = map(lambda r,theta: r * math.cos(theta), rs, thetas)
-ys = map(lambda r,theta: r * math.sin(theta), rs, thetas)
-mic_coordinates = np.array(zip(xs, ys))
+xs = list(map(lambda r,theta: r * math.cos(theta), rs, thetas))
+ys = list(map(lambda r,theta: r * math.sin(theta), rs, thetas))
+mic_coordinates = np.array(list(zip(xs, ys)))
 spark_locations_120 = np.empty((7, 2))
 for index,lv_file in enumerate(lv_files[:7]):
     (times, breakdown_signals) = labview.load_data(lv_dir, lv_file, channels=[0,1,2])
     dt = times[1] - times[0]
-    spark_location = signal.accumulated_correlation(breakdown_signals[:,5:20], dt, mic_coordinates, radius, thickness, v_p_SS, grid_size=100, settling_time=settling_time)
+    spark_location = psig.accumulated_correlation(breakdown_signals[:,5:20], dt, mic_coordinates, radius, thickness, thetas, grid_size=100, settling_time=settling_time)
     spark_locations_120[index] = spark_location
-    print '.',
+    print('.',)
 print
 
 # 90 Degrees
-lv_dir = "C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\HPC\\2015-11-13\\Breakdown\\"
+lv_dir = "C:\\Users\\peter\\Development\\Dissertation\\data\\HC\\2015-11-13\\Breakdown\\"
 if platform.system() == 'Linux':
     lv_dir = "/home/lane/Data/HPRF/2015-11-13/Breakdown/"
 lv_files = sorted([ f for f in os.listdir(lv_dir) if (path.isfile(path.join(lv_dir,f)) and f.startswith("reduced_data_") and f.endswith(".npz")) ])
 rs = [11.0, 11.0, 11.0]  # cm
 thetas = np.array([17.5, 1.5, 9.5]) * math.pi / 12.0  # 90 degree rotation
-xs = map(lambda r,theta: r * math.cos(theta), rs, thetas)
-ys = map(lambda r,theta: r * math.sin(theta), rs, thetas)
-mic_coordinates = np.array(zip(xs, ys))
+xs = list(map(lambda r,theta: r * math.cos(theta), rs, thetas))
+ys = list(map(lambda r,theta: r * math.sin(theta), rs, thetas))
+mic_coordinates = np.array(list(zip(xs, ys)))
 spark_locations_90 = np.empty((len(lv_files)-7, 2))
 for index,lv_file in enumerate(lv_files[7:]):
     (times, breakdown_signals) = labview.load_data(lv_dir, lv_file, channels=[0,1,2])
     dt = times[1] - times[0]
-    spark_location = signal.accumulated_correlation(breakdown_signals[:,5:20], dt, mic_coordinates, radius, thickness, v_p_SS, grid_size=100, settling_time=settling_time)
+    spark_location = psig.accumulated_correlation(breakdown_signals[:,5:20], dt, mic_coordinates, radius, thickness, thetas, grid_size=100, settling_time=settling_time)
     spark_locations_90[index] = spark_location
-    print '.',
+    print('.',)
 print
-print 'Done'
+print('Done')
 
 
 # In[51]:
@@ -983,7 +989,7 @@ np.hstack(((1,2,3),np.arange(5,11),(14,16),(21,22,23)))
 # In[3]:
 
 #%matplotlib qt
-lv_dir = "C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\ASC\\"
+lv_dir = "C:\\Users\\peter\\Development\\Dissertation\\data\\ASC\\"
 if platform.system() == 'Linux':
     lv_dir = "/home/lane/Data/ASC/20130306/"
 lv_file = "hammer@18_00_00.000.npz"
@@ -1002,7 +1008,7 @@ plt.xlabel('Time (s)')
 plt.ylabel('Normalized Amplitude (V)')
 plot.plot_signals(times, distorted_spark_signals, tlim=(0.070430, 0.074430), ylim=1.1, norm=True)
 
-plt.show()
+# plt.show()
 
 
 # ## Undistorted Hammer and Spark
@@ -1010,7 +1016,7 @@ plt.show()
 # In[ ]:
 
 #%matplotlib qt
-lv_dir = "C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\ASC\\"
+lv_dir = "C:\\Users\\peter\\Development\\Dissertation\\data\\ASC\\"
 if platform.system() == 'Linux':
     lv_dir = "/home/lane/Data/ASC/20130920/"
 lv_file = "spark_1_36@18_00_00.000.npz"
@@ -1024,7 +1030,7 @@ plt.xlabel('Time (s)')
 plt.ylabel('Normalized Amplitude (V)')
 plot.plot_signals(times, good_hammer_signals, tlim=(0.086338, 0.090338), ylim=1.1, norm=False)
 
-lv_dir = "C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\ASC\\"
+lv_dir = "C:\\Users\\peter\\Development\\Dissertation\\data\\ASC\\"
 lv_file = "spark_1_6@18_00_00.000.npz"
 (times, good_spark_signals) = labview.load_data(lv_dir, lv_file, channels=[0,1,2,3,4,5])
 ymax = np.max(good_spark_signals)
@@ -1034,7 +1040,7 @@ plt.xlabel('Time (s)')
 plt.ylabel('Normalized Amplitude (V)')
 plot.plot_signals(times, good_spark_signals, tlim=(0.051718, 0.055718), ylim=1.1, norm=False)
 
-plt.show()
+# plt.show()
 
 
 # ## Spark vs Reduced
@@ -1042,7 +1048,7 @@ plt.show()
 # In[ ]:
 
 #%matplotlib qt
-lv_dir = "C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\ASC\\"
+lv_dir = "C:\\Users\\peter\\Development\\Dissertation\\data\\ASC\\"
 if platform.system() == 'Linux':
     lv_dir = "/home/lane/Data/ASC/20131011/"
 lv_file = "spark_1_6@18_00_00.000.npz"
@@ -1061,7 +1067,7 @@ plt.xlabel('Time (s)')
 plt.ylabel('Amplitude (V)')
 plot.plot_signals(times, reduced_signals, tlim=(0.0518, 0.0716), ylim=12, norm=False)
 
-plt.show()
+# plt.show()
 
 
 # ## End Flange Transmission
@@ -1073,14 +1079,14 @@ fig.text(0.48, 0.05, 'Time (s)', ha='center', va='center')
 fig.text(0.01, 0.52, 'Acceleration z-component (m/s^2)', ha='center', va='center', rotation='vertical')
 plt.gcf().subplots_adjust(bottom=0.15, left=0.06)
 
-comsol_dir = "C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\HPC\\"
+comsol_dir = "C:\\Users\\peter\\Development\\Dissertation\\data\\HC\\"
 (times, hprf_signals) = comsol.load_data(comsol_dir, "HPRF_end_flange.csv")
 plt.subplot(121)
 plt.xlim([0,0.005])
 plt.ylim([-0.5,0.5])
 plt.plot(times, hprf_signals[0], 'k')
 
-comsol_dir = "C:\\msys64\\home\\plane\\Development\\Dissertation\\data\\ASC\\"
+comsol_dir = "C:\\Users\\peter\\Development\\Dissertation\\data\\ASC\\"
 (times, mc_signals) = comsol.load_data(comsol_dir, "ASC_end_flange.csv")
 plt.subplot(122)
 plt.xlim([0,0.005])
